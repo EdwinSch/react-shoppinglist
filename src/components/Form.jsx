@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Form = () => {
+const Form = ({ addItem }) => {
   const [newItemName, setNewItemName] = useState("");
 
   const handleChange = (event) => {
@@ -9,6 +9,14 @@ const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!newItemName) {
+      console.log("empty field");
+      return;
+    }
+
+    addItem(newItemName);
+    setNewItemName("");
+
     console.log(newItemName);
   };
 
