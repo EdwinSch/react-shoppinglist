@@ -1,11 +1,11 @@
 import Form from "./components/Form";
 import Items from "./components/Items";
-
+import dataInit from "./dataInit";
 import { useState } from "react";
 import { nanoid } from "nanoid";
 
 const App = () => {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(dataInit);
 
   const addItem = (itemName) => {
     const newItem = {
